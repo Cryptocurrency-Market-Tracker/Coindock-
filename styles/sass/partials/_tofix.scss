@@ -274,9 +274,18 @@ html {
     border: transparent;
     background-color: transparent;
   }
-
-
-  div {
+  
+  
+  .myDiv {
     background-color: yellow;
     padding: 100px 100px;
+  }
+  
+  .close {
+    background-color: orange;
+    padding: 10px 10px;
+  }
+
+  .carousel {
+    background-color: lightblue;
   }

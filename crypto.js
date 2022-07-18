@@ -7,6 +7,7 @@ cryptoApp.init = () => {
     cryptoApp.marketData();
 
 
+
 }
 
 
@@ -36,22 +37,6 @@ cryptoApp.topList = (result) => {
         <img src ="${coin.image} alt ="${coin.name}></img>
     <p> ${coin.name} </p></button>`
         iconElement.appendChild(liCoinList);
-
-        // Initially nested inside of this method because i couldnt figure out how to make it its own function... 
-        // cryptoApp.coinData = (coins) => {
-        //     const buttons = (document.querySelectorAll('button'));
-        //     buttons.forEach(function (coin) {
-        //         coin.addEventListener('click', function () {
-        //             const selectedCurrency = this.className;
-        //             console.log(selectedCurrency)
-        //             const coinArray = topTen.filter((crypto) => {
-        //                 return (crypto.id == selectedCurrency);
-        //             })
-        //             coinObject = coinArray[0]
-        //             console.log(coinObject)
-        //         })
-        //     })
-        // }
     })
 }
 // identifies and compares selected coin with API. Returns object data based on selected coin. 
@@ -75,21 +60,43 @@ cryptoApp.coinData = (coins) => {
 
 // Display coin data on modal(which we will create)
 cryptoApp.displayCoinData = (coinObject) => {
-    console.log(`The current Price of ${coinObject.name} is $${(coinObject.current_price).toFixed(3)}`)
+    // console.log(`The current Price of ${coinObject.name} is $${(coinObject.current_price).toFixed(3)}`)
     const modalBox = document.querySelector('div')
     modalBox.innerHTML = "";
-    const cryptoPrice = document.createElement('p');
-    cryptoPrice.innerHTML = `$${(coinObject.current_price).toFixed(3)}`
-    modalBox.appendChild(cryptoPrice);
+    const cryptoStats = document.createElement('p');
+    const modalClose = document.createElement('button');
+    modalClose.classList.add('close');
+    modalBox.innerHTML = 
+    ` <h2> ${coinObject.name} - ${coinObject.symbol} </h2>
+    <p> Coin ranking: ${coinObject.market_cap_rank} </p>
+    <p> Current Price: $${(coinObject.current_price).toFixed(3)}</p>
+    <p> Lowest Price within 24 hours: $${(coinObject.low_24h).toFixed(3)}</p>
+    <p> Higest Price within 24 hours: $${(coinObject.high_24h).toFixed(3)}</p>
+    <p> Price change within 24 hours: $${(coinObject.price_change_24h).toFixed(4)} </p>
+    <p> Total Volume: ${(coinObject.total_volume).toLocaleString()}</p>
+    <p> Market Cap: ${((coinObject.market_cap).toLocaleString())} </p>`
+    modalBox.append(modalClose);
 }
 // need to create modal layout with innerhtml which the coinData method will pass through to display the right info. 
 
+// cryptoApp.events = () => {
+//     document.querySelector('#close').addEventListener('click', function (){
+//         const userSelection = this.value;
+//         artApp.getArt(userSelection);
+//     })
+// }
+
+// cryptoApp.boxClose = () => {
+//     document.getElementsByClassName('close').onclick = function (){
+        
+//     }
+// }
+
+
 document.addEventListener('click', function handleClickOutsideBox(event) {
-    const box = document.getElementById('hello');
-    const buttons = document.getElementById('lost');
-  
-    if (buttons.contains(event.target)) {
-      box.style.display = "none";
+    const box = document.querySelector('.close');
+    if (box.contains(event.target)) {
+      myDiv.style.display = "none";
     } 
   });
   
