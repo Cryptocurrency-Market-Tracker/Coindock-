@@ -1,0 +1,25 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+  }
+
+
+  li {
+    padding: 0 20px;
+    list-style: none;
+    @include fontStyles (400, 20px, 0, $blue);
+
+  }
+
+  li:nth-child(2) {
+    color: $orange;
+  }
+
+  h1 {
+    @include fontStyles(700, 48px, 0, $blue);
+  }
+}

@@ -346,4 +346,6 @@ button {
 
 .right {
   right: 1rem;
-}/*# sourceMappingURL=style.css.map */
+
+html {
+  background-color: black;
