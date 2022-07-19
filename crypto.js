@@ -61,13 +61,13 @@ cryptoApp.coinData = (coins) => {
 // Display coin data on modal(which we will create)
 cryptoApp.displayCoinData = (coinObject) => {
     // console.log(`The current Price of ${coinObject.name} is $${(coinObject.current_price).toFixed(3)}`)
-    const modalBox = document.querySelector('.myDiv')
+    const modalBox = document.querySelector('div')
     modalBox.innerHTML = "";
     const cryptoStats = document.createElement('p');
     const modalClose = document.createElement('button');
     modalClose.classList.add('close');
-    modalBox.innerHTML =
-        ` <h2> ${coinObject.name} - ${coinObject.symbol} </h2>
+    modalBox.innerHTML = 
+    ` <h2> ${coinObject.name} - ${coinObject.symbol} </h2>
     <p> Coin ranking: ${coinObject.market_cap_rank} </p>
     <p> Current Price: $${(coinObject.current_price).toFixed(3)}</p>
     <p> Lowest Price within 24 hours: $${(coinObject.low_24h).toFixed(3)}</p>
@@ -88,6 +88,7 @@ cryptoApp.displayCoinData = (coinObject) => {
 
 // cryptoApp.boxClose = () => {
 //     document.getElementsByClassName('close').onclick = function (){
+        
 //     }
 // }
 
@@ -95,10 +96,13 @@ cryptoApp.displayCoinData = (coinObject) => {
 document.addEventListener('click', function handleClickOutsideBox(event) {
     const box = document.querySelector('.close');
     if (box.contains(event.target)) {
-        myDiv.style.display = "none";
-    }
-});
+      myDiv.style.display = "none";
+    } 
+  });
+  
 
 cryptoApp.init();
 
 const carouselButtons = document.querySelector('.carouselButton')
+
+
