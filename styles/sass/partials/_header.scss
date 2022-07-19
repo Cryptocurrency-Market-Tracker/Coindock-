@@ -2,16 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+
 
   ul {
     display: flex;
+
   }
 
 
   li {
     padding: 0 20px;
     list-style: none;
-    @include fontStyles (400, 20px, 0, $blue);
+    @include fontStyles (400, 20px, 0, white);
+
 
   }
 

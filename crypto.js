@@ -88,6 +88,7 @@ cryptoApp.displayCoinData = (coinObject) => {
 
 // cryptoApp.boxClose = () => {
 //     document.getElementsByClassName('close').onclick = function (){
+
 //     }
 // }
 
@@ -99,6 +100,5 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
     }
 });
 
-cryptoApp.init();
 
-const carouselButtons = document.querySelector('.carouselButton')
+cryptoApp.init();

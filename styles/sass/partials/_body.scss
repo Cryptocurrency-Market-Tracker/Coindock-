@@ -1,3 +1,42 @@
-html {
-  background: #fff;
+body {
+  background-image: url(../assets/pattern.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: space-evenly;
+
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      @include fontStyles (700, 60px, 0, white);
+    }
+
+    span {
+      color: $orange;
+    }
+
+    p {
+      @include fontStyles (400, 20px, 0, white);
+      width: 65%;
+    }
+
+    .company {
+      color: $blue;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  .phoneApp img {
+    // margin-top: 65px;
+    width: 80%;
+  }
+
+
 }
