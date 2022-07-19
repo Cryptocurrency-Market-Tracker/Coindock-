@@ -102,3 +102,5 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
   
 
 cryptoApp.init();
+
+const carouselButtons = document.querySelector('.carouselButton')
