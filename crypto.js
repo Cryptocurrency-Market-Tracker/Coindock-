@@ -5,9 +5,6 @@ cryptoApp.url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&
 
 cryptoApp.init = () => {
     cryptoApp.marketData();
-
-
-
 }
 
 
@@ -33,19 +30,20 @@ cryptoApp.topList = (result) => {
     // display top 10 coins. 
     topTen.forEach((coin) => {
         const liCoinList = document.createElement('li');
-        liCoinList.innerHTML = ` <button class = ${coin.id}> 
+        liCoinList.innerHTML = ` <button id = '${coin.id}' class = coin>    
         <img src ="${coin.image} alt ="${coin.name}></img>
     <p> ${coin.name} </p></button>`
         iconElement.appendChild(liCoinList);
     })
 }
+// line 36 changed to ID and added class
 // identifies and compares selected coin with API. Returns object data based on selected coin. 
 cryptoApp.coinData = (coins) => {
-    const buttons = (document.querySelectorAll('button'));
+    const buttons = (document.querySelectorAll('.coin')); //changed to target class
 
     buttons.forEach(function (coin) {
         coin.addEventListener('click', function (event) {
-            const selectedCurrency = this.className;
+            const selectedCurrency = this.id; // changed to ID 
             document.getElementById("myDiv").style.display = "";
             console.log(selectedCurrency)
             const coinArray = coins.filter((crypto) => {
@@ -61,7 +59,7 @@ cryptoApp.coinData = (coins) => {
 // Display coin data on modal(which we will create)
 cryptoApp.displayCoinData = (coinObject) => {
     // console.log(`The current Price of ${coinObject.name} is $${(coinObject.current_price).toFixed(3)}`)
-    const modalBox = document.querySelector('div')
+    const modalBox = document.querySelector('#myDiv') //changed to target modal class
     modalBox.innerHTML = "";
     const cryptoStats = document.createElement('p');
     const modalClose = document.createElement('button');
@@ -91,8 +89,6 @@ cryptoApp.displayCoinData = (coinObject) => {
         
 //     }
 // }
-
-
 document.addEventListener('click', function handleClickOutsideBox(event) {
     const box = document.querySelector('.close');
     if (box.contains(event.target)) {
@@ -100,9 +96,60 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
     } 
   });
   
+// For the Carousel (June 19)
+
+const carouselSlide = document.querySelector('.carouselSlide');
+const carouselImages = document.querySelectorAll('.slide img');
+const leftButton = document.querySelector('#left');
+const rightButton = document.querySelector('#right');
+
+let counter = 1;
+const size = carouselImages[0].clientWidth;
+
+carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+rightButton.addEventListener('click', () => {
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter++;
+    console.log(counter)
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+})
+
+carouselSlide.addEventListener('transitionend',()=>{
+    if (carouselImages[counter].id === 'lastClone'){
+        carouselSlide.style.transition = "none";
+        counter = carouselImages.length - 2;
+    }
+})
+
+// cryptoApp.carousel = () => {
+//     const buttons = (document.querySelectorAll('.carouselButton')); //changed to target class
+//     buttons.forEach(function (button) {
+//         button.addEventListener('click', function () {
+//             const offset = button.dataset.carouselButton === "right" ? 1 : -1;
+//             const slides = button.closest("[dataCarousel]").querySelector("[dataSlides]");
+//             const activeSlide = slides.querySelector("[dataActive]")
+//             let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+//             console.log(newIndex);
+//             if (newIndex < 0) newIndex = slides.children.length - 1 
+//             if (newIndex >= slides.children.length) newIndex = 0
+//             slides.children[newIndex].dataset.active = true 
+//             delete activeSlide.dataset.active 
+//         })
+//     })
+// }
+
+// cryptoApp.carousel = () => {
+//     const carouselButtons = document.querySelector('.carouselButton')
+//     carouselButtons.forEach(function (buttons) {
+//             carouselButtons.addEventListener("click", function () {
+//                 console.log(carouselButtons);
+//             });
+//         })
+// }
+
 
 cryptoApp.init();
 
-const carouselButtons = document.querySelector('.carouselButton')
 
 

@@ -292,10 +292,6 @@ button {
   padding: 10px 10px;
 }
 
-.carousel {
-  background-color: lightblue;
-}
-
 body {
   margin: 0;
 }
@@ -580,69 +576,20 @@ button {
   padding: 10px 10px;
 }
 
-.carousel {
-  background-color: lightblue;
+.carouselContainer {
+  width: 60%;
+  margin: auto;
+  border: 5px solid black;
 }
 
-.carousel {
-  width: 80vw;
-  height: 50vh;
-  position: relative;
-}
-
-.carousel > ul {
-  margin: 0;
-  padding: 0;
+li {
   list-style: none;
 }
 
-.slide {
-  position: absolute;
-  inset: 0;
-}
-
-.slide > img {
-  display: block;
+.carouselSlide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-
-.slide[data-active] {
-  opacity: 1;
-}
-
-.carouselButton {
-  position: absolute;
-  z-index: 10;
-  background: none;
-  border: none;
-  font-size: 4rem;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  color: yellow;
-  padding: 0 0.5rem;
-  background-color: black;
-}
-
-.carouselButton:hover,
-.carouselButton:focus {
-  color: white;
-  background-color: black;
-}
-
-.carouselButton:focus {
-  outline: 1px solid black;
-}
-
-.left {
-  left: 1rem;
-}
-
-.right {
-  right: 1rem;
+  height: 500px;
 }
