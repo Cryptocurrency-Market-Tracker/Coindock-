@@ -46,7 +46,7 @@ cryptoApp.coinData = (coins) => {
     buttons.forEach(function (coin) {
         coin.addEventListener('click', function (event) {
             const selectedCurrency = this.className;
-            document.getElementById("myDiv").style.display = "";
+            document.getElementById("modal").style.display = "";
             console.log(selectedCurrency)
             const coinArray = coins.filter((crypto) => {
                 return (crypto.id == selectedCurrency);
@@ -61,20 +61,26 @@ cryptoApp.coinData = (coins) => {
 // Display coin data on modal(which we will create)
 cryptoApp.displayCoinData = (coinObject) => {
     // console.log(`The current Price of ${coinObject.name} is $${(coinObject.current_price).toFixed(3)}`)
-    const modalBox = document.querySelector('.myDiv')
+    const modalBox = document.querySelector('.modal')
     modalBox.innerHTML = "";
     const cryptoStats = document.createElement('p');
     const modalClose = document.createElement('button');
     modalClose.classList.add('close');
     modalBox.innerHTML =
-        ` <h2> ${coinObject.name} - ${coinObject.symbol} </h2>
-    <p> Coin ranking: ${coinObject.market_cap_rank} </p>
-    <p> Current Price: $${(coinObject.current_price).toFixed(3)}</p>
-    <p> Lowest Price within 24 hours: $${(coinObject.low_24h).toFixed(3)}</p>
-    <p> Higest Price within 24 hours: $${(coinObject.high_24h).toFixed(3)}</p>
-    <p> Price change within 24 hours: $${(coinObject.price_change_24h).toFixed(4)} </p>
-    <p> Total Volume: ${(coinObject.total_volume).toLocaleString()}</p>
-    <p> Market Cap: ${((coinObject.market_cap).toLocaleString())} </p>`
+        `<h2> ${coinObject.name} - ${coinObject.symbol} </h2>
+        <div class = "marketCoinData">  
+        <p> Coin ranking: ${coinObject.market_cap_rank} </p>
+        <p> Current Price: $${(coinObject.current_price).toFixed(3)}</p>
+        <p> Lowest Price within 24 hours: $${(coinObject.low_24h).toFixed(3)}</p>
+        <p> Higest Price within 24 hours: $${(coinObject.high_24h).toFixed(3)}</p>
+        <p> Price change within 24 hours: $${(coinObject.price_change_24h).toFixed(4)} </p>
+        <p> Total Volume: ${(coinObject.total_volume).toLocaleString()}</p>
+        <p> Market Cap: ${((coinObject.market_cap).toLocaleString())} </p>
+        </div>
+        <div class = marketVisualData>
+        <img src = "./assets/${coinObject.symbol}.png" alt ="${coinObject.name}"
+        </div>
+    `
     modalBox.append(modalClose);
 }
 // need to create modal layout with innerhtml which the coinData method will pass through to display the right info. 
@@ -96,7 +102,7 @@ cryptoApp.displayCoinData = (coinObject) => {
 document.addEventListener('click', function handleClickOutsideBox(event) {
     const box = document.querySelector('.close');
     if (box.contains(event.target)) {
-        myDiv.style.display = "none";
+        modal.style.display = "none";
     }
 });
 

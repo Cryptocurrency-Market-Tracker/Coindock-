@@ -282,11 +282,6 @@ button {
   background-color: transparent;
 }
 
-.myDiv {
-  background-color: yellow;
-  padding: 100px 100px;
-}
-
 .close {
   background-color: orange;
   padding: 10px 10px;
@@ -641,4 +636,36 @@ template {
   width: 90%;
   margin: 0 auto;
   max-width: 1920px;
+}
+
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.modal h2 {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 0;
+  font-family: "Poppins", sans-serif;
+  color: #F2911B;
+}
+.modal p {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+.modal .marketVisualData {
+  -webkit-box-shadow: 0 0 20px;
+          box-shadow: 0 0 20px;
 }

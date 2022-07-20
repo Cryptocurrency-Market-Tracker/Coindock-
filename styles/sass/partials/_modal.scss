@@ -1,0 +1,32 @@
+// .modal {
+//   display: flex;
+//   align-items: center;
+
+//   h2 {
+//     @include fontStyles (700, 60px, 0, $orange);
+//   }
+
+//   p {
+//     @include fontStyles (400, 20px, 0, white);
+//   }
+// }
+
+.modal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  h2 {
+    @include fontStyles (700, 60px, 0, $orange);
+  }
+
+  p {
+    @include fontStyles (400, 20px, 0, white);
+  }
+
+  .marketVisualData {
+    box-shadow: 0 0 20px;
+  }
+}
