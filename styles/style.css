@@ -576,10 +576,15 @@ button {
   padding: 10px 10px;
 }
 
+main {
+  background-color: orange;
+}
+
 .carouselContainer {
-  width: 60%;
+  width: 400px;
   margin: auto;
   border: 5px solid black;
+  overflow: hidden;
 }
 
 li {
@@ -590,6 +595,4 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  height: 500px;
 }
