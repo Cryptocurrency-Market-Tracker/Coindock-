@@ -291,6 +291,11 @@ body {
   background-image: url(../assets/pattern.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+}
+
+#blur {
+  visibility: "";
 }
 
 .mainContainer {
@@ -338,6 +343,10 @@ body {
 }
 .mainContainer .phoneApp img {
   width: 80%;
+}
+
+.iconButtons {
+  margin-top: 300px;
 }
 
 .navBar {
@@ -645,11 +654,20 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-height: 100%;
+  border: none;
+  -webkit-box-shadow: 5px 5px 3000px rgb(255, 255, 255);
+          box-shadow: 5px 5px 3000px rgb(255, 255, 255);
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
 }
 .modal h2 {
   font-size: 60px;
@@ -663,9 +681,9 @@ template {
   font-weight: 400;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: #4973F2;
 }
 .modal .marketVisualData {
-  -webkit-box-shadow: 0 0 20px;
-          box-shadow: 0 0 20px;
+  -webkit-box-shadow: 0 0 20px rgba(253, 253, 253, 0.767);
+          box-shadow: 0 0 20px rgba(253, 253, 253, 0.767);
 }

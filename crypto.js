@@ -1,5 +1,6 @@
 const cryptoApp = {};
 cryptoApp.url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+const bgBlur = document.getElementById("blur");
 
 
 
@@ -46,7 +47,11 @@ cryptoApp.coinData = (coins) => {
     buttons.forEach(function (coin) {
         coin.addEventListener('click', function (event) {
             const selectedCurrency = this.className;
-            document.getElementById("modal").style.display = "";
+
+            bgBlur.style.visibility = "hidden";
+
+            const modal = document.getElementById("modal");
+            modal.style.display = "";
             console.log(selectedCurrency)
             const coinArray = coins.filter((crypto) => {
                 return (crypto.id == selectedCurrency);
@@ -68,7 +73,12 @@ cryptoApp.displayCoinData = (coinObject) => {
     modalClose.classList.add('close');
     modalBox.innerHTML =
         `<h2> ${coinObject.name} - ${coinObject.symbol} </h2>
-        <div class = "marketCoinData">  
+        
+        <div class = marketVisualData>
+        <img src = "./assets/${coinObject.symbol}.png" alt ="${coinObject.name}">
+        </div>
+
+        <div class = "marketCoinData">
         <p> Coin ranking: ${coinObject.market_cap_rank} </p>
         <p> Current Price: $${(coinObject.current_price).toFixed(3)}</p>
         <p> Lowest Price within 24 hours: $${(coinObject.low_24h).toFixed(3)}</p>
@@ -76,9 +86,6 @@ cryptoApp.displayCoinData = (coinObject) => {
         <p> Price change within 24 hours: $${(coinObject.price_change_24h).toFixed(4)} </p>
         <p> Total Volume: ${(coinObject.total_volume).toLocaleString()}</p>
         <p> Market Cap: ${((coinObject.market_cap).toLocaleString())} </p>
-        </div>
-        <div class = marketVisualData>
-        <img src = "./assets/${coinObject.symbol}.png" alt ="${coinObject.name}"
         </div>
     `
     modalBox.append(modalClose);
@@ -103,6 +110,7 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
     const box = document.querySelector('.close');
     if (box.contains(event.target)) {
         modal.style.display = "none";
+        bgBlur.style.visibility = "";
     }
 });
 

@@ -2,6 +2,11 @@ body {
   background-image: url(../assets/pattern.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+}
+
+#blur {
+  visibility: "";
 }
 
 .mainContainer {
@@ -37,6 +42,8 @@ body {
     // margin-top: 65px;
     width: 80%;
   }
+}
 
-
+.iconButtons {
+  margin-top: 300px;
 }
