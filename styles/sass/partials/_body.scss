@@ -19,7 +19,8 @@ body {
     justify-content: center;
 
     h2 {
-      @include fontStyles (700, 60px, 0, white);
+      @include fontStyles (700, 6rem, 0, white);
+      margin-bottom: 30px;
     }
 
     span {
@@ -40,10 +41,10 @@ body {
 
   .phoneApp img {
     // margin-top: 65px;
-    width: 80%;
+    height: 1000px;
   }
 }
 
 .iconButtons {
-  margin-top: 300px;
+  margin-top: 200px;
 }

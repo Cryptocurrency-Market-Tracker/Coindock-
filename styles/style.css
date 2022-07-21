@@ -319,11 +319,12 @@ body {
           justify-content: center;
 }
 .mainContainer .mainContent h2 {
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 700;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
   color: white;
+  margin-bottom: 30px;
 }
 .mainContainer .mainContent span {
   color: #F2911B;
@@ -342,11 +343,11 @@ body {
   font-weight: 700;
 }
 .mainContainer .phoneApp img {
-  width: 80%;
+  height: 1000px;
 }
 
 .iconButtons {
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 .navBar {
@@ -664,8 +665,8 @@ template {
           transform: translate(-50%, -50%);
   max-height: 100%;
   border: none;
-  -webkit-box-shadow: 5px 5px 3000px rgb(255, 255, 255);
-          box-shadow: 5px 5px 3000px rgb(255, 255, 255);
+  -webkit-box-shadow: 5px 5px 4000px rgb(22, 141, 196);
+          box-shadow: 5px 5px 4000px rgb(22, 141, 196);
   border-radius: 20px;
   background: rgb(255, 255, 255);
 }
