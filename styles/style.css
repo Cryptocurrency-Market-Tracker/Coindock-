@@ -410,9 +410,9 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -423,10 +423,12 @@ template {
           transform: translate(-50%, -50%);
   max-height: 100%;
   border: none;
-  -webkit-box-shadow: 5px 5px 4000px rgb(22, 141, 196);
-          box-shadow: 5px 5px 4000px rgb(22, 141, 196);
+  -webkit-box-shadow: 5px 5px 500px inset rgb(223, 226, 228);
+          box-shadow: 5px 5px 500px inset rgb(223, 226, 228);
+  -webkit-box-shadow: 5px 5px 2000px rgb(7, 50, 85);
+          box-shadow: 5px 5px 2000px rgb(7, 50, 85);
   border-radius: 20px;
-  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.2);
 }
 .modal h2 {
   font-size: 60px;
@@ -448,4 +450,38 @@ template {
 }
 .modal .close:hover {
   cursor: pointer;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
