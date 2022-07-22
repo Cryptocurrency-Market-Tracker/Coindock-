@@ -585,6 +585,7 @@ main {
   margin: auto;
   border: 5px solid black;
   overflow: hidden;
+  position: relative;
 }
 
 li {
@@ -595,4 +596,22 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.carouselButton {
+  padding: 10px;
+  background-color: lightblue;
+}
+
+#left {
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+}
+
+#right {
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  left: 92%;
 }

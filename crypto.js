@@ -22,19 +22,36 @@ cryptoApp.marketData = () => {
 
 // Identifies top 10 coins on the market WITH .FILTER ADVANCED ARRAY METHODS.
 cryptoApp.topList = (result) => {
-    const iconElement = document.querySelector('.iconButtons');
+    const carouselElement = document.querySelector('.carouselSlide');
     const topTen = result.filter((coins) => {
         return (coins.market_cap_rank < 11);
     });
 
     // display top 10 coins. 
+    const firstCoin = topTen[9];
+        const coinList = document.createElement('img');
+        coinList.src = `${firstCoin.image}`;
+        coinList.id = `${firstCoin.id}`;
+        coinList.classList = 'lastClone';
+        coinList.alt = `${firstCoin.name}`;
+        carouselElement.appendChild(coinList);
+
     topTen.forEach((coin) => {
-        const liCoinList = document.createElement('li');
-        liCoinList.innerHTML = ` <button id = '${coin.id}' class = coin>    
-        <img src ="${coin.image} alt ="${coin.name}></img>
-    <p> ${coin.name} </p></button>`
-        iconElement.appendChild(liCoinList);
+        const coinList = document.createElement('img');
+        coinList.src = `${coin.image}`;
+        coinList.id = `${coin.id}`;
+        coinList.alt = `${coin.name}`;
+        coinList.classList = 'coin';
+        carouselElement.appendChild(coinList);
     })
+    const lastCoin = topTen[0];
+        const coinList2 = document.createElement('img');
+        coinList2.src = `${lastCoin.image}`;
+        coinList2.id = `${lastCoin.id}`;
+        coinList2.classList = 'firstClone';
+        coinList2.alt = `${lastCoin.name}`;
+        carouselElement.appendChild(coinList2);
+        cryptoApp.carousel();
 }
 // line 36 changed to ID and added class
 // identifies and compares selected coin with API. Returns object data based on selected coin. 
@@ -45,12 +62,10 @@ cryptoApp.coinData = (coins) => {
         coin.addEventListener('click', function (event) {
             const selectedCurrency = this.id; // changed to ID 
             document.getElementById("myDiv").style.display = "";
-            console.log(selectedCurrency)
             const coinArray = coins.filter((crypto) => {
                 return (crypto.id == selectedCurrency);
             })
             const coinObject = coinArray[0]
-            console.log(coinObject)
             cryptoApp.displayCoinData(coinObject);
         })
     })
@@ -77,95 +92,61 @@ cryptoApp.displayCoinData = (coinObject) => {
 }
 // need to create modal layout with innerhtml which the coinData method will pass through to display the right info. 
 
-// cryptoApp.events = () => {
-//     document.querySelector('#close').addEventListener('click', function (){
-//         const userSelection = this.value;
-//         artApp.getArt(userSelection);
-//     })
-// }
-
-// cryptoApp.boxClose = () => {
-//     document.getElementsByClassName('close').onclick = function (){
-        
-//     }
-// }
-// document.addEventListener('click', function handleClickOutsideBox(event) {
-//     const box = document.querySelector('.close');
-//     if (box.contains(event.target)) {
-//       myDiv.style.display = "none";
-//     } 
-//   });
+document.addEventListener('click', function handleClickOutsideBox(event) {
+    const box = document.querySelector('.close');
+    if (box.contains(event.target)) {
+      myDiv.style.display = "none";
+    } 
+  });
   
 // For the Carousel (June 19)
 
-const carouselSlide = document.querySelector('.carouselSlide');
-const carouselImages = document.querySelectorAll('.carouselSlide img');
-const leftButton = document.querySelector('#left');
-const rightButton = document.querySelector('#right');
+cryptoApp.carousel = () => {
+    const carouselSlide = document.querySelector('.carouselSlide');
+    const carouselImages = document.querySelectorAll('.carouselSlide img');
+    const leftButton = document.querySelector('#left');
+    const rightButton = document.querySelector('#right');
 
-let counter = 1;
-const size = carouselImages[0].clientWidth;
-console.log(carouselImages);
+    let counter = 1;
+    const size = carouselImages[0].clientWidth;
 
-carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
-rightButton.addEventListener('click', () => {
-    if(counter >= carouselImages.length - 1) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter++;
     carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    console.log(counter);
-})
 
-leftButton.addEventListener('click', () => {
-    if(counter <= 0 ) return;
-    carouselSlide.style.transition = "transform 0.4s ease-in-out";
-    counter--;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    console.log(counter);
-})
-
-carouselSlide.addEventListener('transitionend',()=>{
-    if (carouselImages[counter].id === 'lastClone'){
-        carouselSlide.style.transition = "none";
-        counter = carouselImages.length - 2;
+    rightButton.addEventListener('click', () => {
+        if(counter >= carouselImages.length - 1) return;
+        carouselSlide.style.transition = "transform 0.2s ease-in-out";
+        counter++;
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
-    if (carouselImages[counter].id === 'firstClone'){
-        console.log(counter);
-        carouselSlide.style.transition = "none";
-        counter = carouselImages.length - counter;
+        cryptoApp.coinName = document.querySelector('.coinName');
+        cryptoApp.coinName.innerHTML = "";
+        cryptoApp.coinText = document.createElement('p');
+        cryptoApp.coinText.textContent = `${carouselImages[counter].id}`;
+        cryptoApp.coinName.appendChild(cryptoApp.coinText)
+    })
+
+    leftButton.addEventListener('click', () => {
+        if(counter <= 0 ) return;
+        carouselSlide.style.transition = "transform 0.2s ease-in-out";
+        counter--;
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-    }
+        cryptoApp.coinName.innerHTML = "";
+        cryptoApp.coinText.textContent = `${carouselImages[counter].id}`;
+        cryptoApp.coinName.appendChild(cryptoApp.coinText)
+    })
 
-})
-
-// cryptoApp.carousel = () => {
-//     const buttons = (document.querySelectorAll('.carouselButton')); //changed to target class
-//     buttons.forEach(function (button) {
-//         button.addEventListener('click', function () {
-//             const offset = button.dataset.carouselButton === "right" ? 1 : -1;
-//             const slides = button.closest("[dataCarousel]").querySelector("[dataSlides]");
-//             const activeSlide = slides.querySelector("[dataActive]")
-//             let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-//             console.log(newIndex);
-//             if (newIndex < 0) newIndex = slides.children.length - 1 
-//             if (newIndex >= slides.children.length) newIndex = 0
-//             slides.children[newIndex].dataset.active = true 
-//             delete activeSlide.dataset.active 
-//         })
-//     })
-// }
-
-// cryptoApp.carousel = () => {
-//     const carouselButtons = document.querySelector('.carouselButton')
-//     carouselButtons.forEach(function (buttons) {
-//             carouselButtons.addEventListener("click", function () {
-//                 console.log(carouselButtons);
-//             });
-//         })
-// }
-
+    carouselSlide.addEventListener('transitionend',()=>{
+        if (carouselImages[counter].className === 'lastClone'){
+            carouselSlide.style.transition = "none";
+            counter = carouselImages.length - 2;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        }
+        if (carouselImages[counter].className === 'firstClone'){
+            carouselSlide.style.transition = "none";
+            counter = carouselImages.length - counter;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        }
+    })
+}
 
 cryptoApp.init();
 
