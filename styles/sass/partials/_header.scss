@@ -4,9 +4,14 @@
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.075);
 
+  &:hover {
+    // cursor: pointer;
+  }
+
 
   ul {
     display: flex;
+
 
   }
 
@@ -19,11 +24,20 @@
 
   }
 
-  li:nth-child(2) {
-    color: $orange;
+  a {
+    text-decoration: none;
+    color: $blue;
+
+    &:hover {
+      color: $orange;
+    }
   }
 
   h1 {
     @include fontStyles(700, 48px, 0, $blue);
+    // border: 2px solid white;
+    // background-color: white;
+    // border-radius: 20px;
+    // padding: 10px;
   }
 }

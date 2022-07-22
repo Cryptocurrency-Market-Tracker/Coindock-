@@ -71,13 +71,15 @@ cryptoApp.displayCoinData = (coinObject) => {
     const cryptoStats = document.createElement('p');
     const modalClose = document.createElement('button');
     modalClose.classList.add('close');
+
+    modalClose.innerHTML = "<i class='fa-solid fa-rectangle-xmark fa-3x'></i>"
+
     modalBox.innerHTML =
         `<h2> ${coinObject.name} - ${coinObject.symbol} </h2>
         
         <div class = marketVisualData>
         <img src = "./assets/${coinObject.symbol}.png" alt ="${coinObject.name}">
         </div>
-
         <div class = "marketCoinData">
         <p> Coin ranking: ${coinObject.market_cap_rank} </p>
         <p> Current Price: $${(coinObject.current_price).toFixed(3)}</p>
@@ -85,7 +87,7 @@ cryptoApp.displayCoinData = (coinObject) => {
         <p> Higest Price within 24 hours: $${(coinObject.high_24h).toFixed(3)}</p>
         <p> Price change within 24 hours: $${(coinObject.price_change_24h).toFixed(4)} </p>
         <p> Total Volume: ${(coinObject.total_volume).toLocaleString()}</p>
-        <p> Market Cap: ${((coinObject.market_cap).toLocaleString())} </p>
+        <p> Market Cap: $${((coinObject.market_cap).toLocaleString())} </p>
         </div>
     `
     modalBox.append(modalClose);
