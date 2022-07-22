@@ -2,11 +2,9 @@ main {
     background-color: orange;
 }
 .carouselContainer {
-    width: 400px;
+    width: 250px;
     margin: auto;
-    border: 5px solid black;
     overflow: hidden;
-    position: relative;
 }
 
 li {
@@ -15,22 +13,35 @@ li {
 
 .carouselSlide {
     display: flex;
+    position: relative;
 }
 
 .carouselButton {
     padding: 10px;
-    background-color: lightblue;
+    background-color: orange;
 }
 
 #left {
     position: absolute;
-    top: 45%;
     z-index: 10; 
+    right: 68%;
+    top: 18%;
 }
 
 #right {
     position: absolute;
-    top: 45%;
     z-index: 10; 
-    left: 92%;
+    left: 68%;
+    top: 18%;
+   
+}
+
+.fa-arrow-left-long ,
+.fa-arrow-right-long {
+    color: lightblue;
+}
+
+.coinName {
+    margin: 0 auto;
+    text-align: center;
 }
