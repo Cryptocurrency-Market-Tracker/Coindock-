@@ -1,60 +1,49 @@
-.carousel {
-    width: 80vw;
-    height: 50vh;
-    position: relative;
+.carouselContainer {
+    width: 250px;
+    margin: auto;
+    overflow: hidden;
+
 }
 
-.carousel > ul {
-    margin: 0;
-    padding: 0;
+li {
     list-style: none;
 }
 
-.slide {
-    position: absolute;
-    inset: 0;
-    // opacity: 0;
-}
-
-.slide > img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.slide[data-active] {
-    opacity: 1;
+.carouselSlide {
+    display: flex;
+    position: relative;
 }
 
 .carouselButton {
-    position: absolute;
-    z-index: 10;
-    background: none;
-    border: none;
-    font-size: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: yellow;
-    padding: 0 .5rem;
-    background-color: black;
-}
-
-.carouselButton:hover,
-.carouselButton:focus {
-    color: white;
-    background-color: black;
-}
-
-.carouselButton:focus {
-    outline: 1px solid black;
+    padding: 10px;
+    background-color: orange;
 }
 
 .left {
-    left: 1rem
+    position: absolute;
+    z-index: 10;
+    right: 60%;
+    top: 113%;
 }
 
 .right {
-    right: 1rem
+    position: absolute;
+    z-index: 10;
+    left: 60%;
+    top: 113%;
+
+}
+
+.fa-arrow-left-long,
+.fa-arrow-right-long {
+    color: lightblue;
+}
+
+.coinName {
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+        @include fontStyles (400, 2rem, 0, white);
+    }
 }

@@ -61,36 +61,52 @@ cryptoApp.search = (result) => {
 
 // Identifies top 10 coins on the market WITH .FILTER ADVANCED ARRAY METHODS.
 cryptoApp.topList = (result) => {
-    const iconElement = document.querySelector('.iconButtons');
+    const carouselElement = document.querySelector('.carouselSlide');
     const topTen = result.filter((coins) => {
         return (coins.market_cap_rank < 11);
     });
 
     // display top 10 coins. 
+    const firstCoin = topTen[9];
+    const coinList = document.createElement('img');
+    coinList.src = `${firstCoin.image}`;
+    coinList.id = `${firstCoin.id}`;
+    coinList.classList = 'lastClone';
+    coinList.alt = `${firstCoin.name}`;
+    carouselElement.appendChild(coinList);
+
     topTen.forEach((coin) => {
-        const liCoinList = document.createElement('li');
-        liCoinList.innerHTML = ` <button class = ${coin.id}> 
-        <img src ="${coin.image} alt ="${coin.name}></img>
-    <p> ${coin.name} </p></button>`
-        iconElement.appendChild(liCoinList);
+        const coinList = document.createElement('img');
+        coinList.src = `${coin.image}`;
+        coinList.id = `${coin.id}`;
+        coinList.alt = `${coin.name}`;
+        coinList.classList = 'coin';
+        carouselElement.appendChild(coinList);
     })
+    const lastCoin = topTen[0];
+    const coinList2 = document.createElement('img');
+    coinList2.src = `${lastCoin.image}`;
+    coinList2.id = `${lastCoin.id}`;
+    coinList2.classList = 'firstClone';
+    coinList2.alt = `${lastCoin.name}`;
+    carouselElement.appendChild(coinList2);
+    cryptoApp.carousel();
 }
+// line 36 changed to ID and added class
 // identifies and compares selected coin with API. Returns object data based on selected coin. 
 cryptoApp.coinData = (coins) => {
-    const buttons = (document.querySelectorAll('button'));
+    const buttons = (document.querySelectorAll('.coin')); //changed to target class
 
     buttons.forEach(function (coin) {
         coin.addEventListener('click', function (event) {
-            const selectedCurrency = this.className;
-            // bgBlur.style.visibility = "hidden";
-
-
             const modal = document.getElementById("modal");
+            const selectedCurrency = this.id;
             modal.style.display = "";
             const coinArray = coins.filter((crypto) => {
                 return (crypto.id == selectedCurrency);
             })
             const coinObject = coinArray[0]
+            console.log(coinObject);
             cryptoApp.displayCoinData(coinObject);
         })
     })
@@ -101,6 +117,7 @@ cryptoApp.displayCoinData = (coinObject) => {
     // console.log(`The current Price of ${coinObject.name} is $${(coinObject.current_price).toFixed(3)}`)
     const modalBox = document.querySelector('.modal')
     modalBox.innerHTML = "";
+
     const cryptoStats = document.createElement('p');
     const modalClose = document.createElement('button');
     modalClose.classList.add('close');
@@ -126,6 +143,7 @@ cryptoApp.displayCoinData = (coinObject) => {
     `
     modalBox.append(modalClose);
 }
+// need to create modal layout with innerhtml which the coinData method will pass through to display the right info. 
 
 document.addEventListener('click', function handleClickOutsideBox(event) {
     const box = document.querySelector('.close');
@@ -134,6 +152,53 @@ document.addEventListener('click', function handleClickOutsideBox(event) {
         bgBlur.style.visibility = "";
     }
 });
+// For the Carousel (June 19)
 
+cryptoApp.carousel = () => {
+    const carouselSlide = document.querySelector('.carouselSlide');
+    const carouselImages = document.querySelectorAll('.carouselSlide img');
+    const leftButton = document.querySelector('#left');
+    const rightButton = document.querySelector('#right');
+
+    let counter = 1;
+    const size = carouselImages[0].clientWidth;
+
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+    rightButton.addEventListener('click', () => {
+        if (counter >= carouselImages.length - 1) return;
+        carouselSlide.style.transition = "transform 0.2s ease-in-out";
+        counter++;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        cryptoApp.coinName = document.querySelector('.coinName');
+        cryptoApp.coinName.innerHTML = "";
+        cryptoApp.coinText = document.createElement('p');
+        cryptoApp.coinText.textContent = `${carouselImages[counter].id}`;
+        cryptoApp.coinName.appendChild(cryptoApp.coinText)
+    })
+
+    leftButton.addEventListener('click', () => {
+        if (counter <= 0) return;
+        carouselSlide.style.transition = "transform 0.2s ease-in-out";
+        counter--;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        cryptoApp.coinName.innerHTML = "";
+        cryptoApp.coinText.textContent = `${carouselImages[counter].id}`;
+        cryptoApp.coinName.appendChild(cryptoApp.coinText)
+    })
+
+    carouselSlide.addEventListener('transitionend', () => {
+        if (carouselImages[counter].className === 'lastClone') {
+            carouselSlide.style.transition = "none";
+            counter = carouselImages.length - 2;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        }
+        if (carouselImages[counter].className === 'firstClone') {
+            carouselSlide.style.transition = "none";
+            counter = carouselImages.length - counter;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        }
+    })
+}
 
 cryptoApp.init();

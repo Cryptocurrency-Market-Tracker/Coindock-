@@ -443,6 +443,7 @@ template {
           box-shadow: 5px 5px 2000px rgb(7, 50, 85);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.2);
+  z-index: 20;
 }
 .modal h2 {
   font-size: 60px;
@@ -574,4 +575,147 @@ template {
     font-size: 15px;
     color: white;
   }
+}
+.carouselContainer {
+  width: 250px;
+  margin: auto;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+.carouselSlide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.carouselButton {
+  padding: 10px;
+  background-color: orange;
+}
+
+.left {
+  position: absolute;
+  z-index: 10;
+  right: 60%;
+  top: 113%;
+}
+
+.right {
+  position: absolute;
+  z-index: 10;
+  left: 60%;
+  top: 113%;
+}
+
+.fa-arrow-left-long,
+.fa-arrow-right-long {
+  color: lightblue;
+}
+
+.coinName {
+  margin: 0 auto;
+  text-align: center;
+}
+.coinName p {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.teamInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5%;
+}
+.teamInfo .person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.teamInfo .person img {
+  width: 80%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.teamInfo .person p {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  line-height: 1.8rem;
+}
+.teamInfo .smLinks {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.teamInfo .smLinks .fa-linkedin,
+.teamInfo .smLinks .fa-github {
+  padding: 20px;
+  font-size: 3rem;
+  color: white;
+}
+.teamInfo .smLinks .fa-linkedin:hover,
+.teamInfo .smLinks .fa-github:hover {
+  color: orange;
+}
+
+.aboutUs {
+  text-align: center;
+}
+.aboutUs h2 {
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin-bottom: 30px;
+}
+.aboutUs p {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  line-height: 1.8rem;
+}
+
+footer {
+  background-color: lightblue;
+  text-align: center;
+}
+footer p {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }

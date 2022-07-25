@@ -29,6 +29,7 @@
   box-shadow: 5px 5px 2000px rgb(7, 50, 85);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.2);
+  z-index: 20;
 
   h2 {
     @include fontStyles (700, 60px, 0, $orange);
