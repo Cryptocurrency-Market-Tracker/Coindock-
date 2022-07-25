@@ -142,16 +142,16 @@ cryptoApp.displayCoinData = (coinObject) => {
         </div>
     `
     modalBox.append(modalClose);
+    document.addEventListener('click', function handleClickOutsideBox(event) {
+        const box = document.querySelector('.close');
+        if (box.contains(event.target)) {
+            modal.style.display = "none";
+            bgBlur.style.visibility = "";
+        }
+    });
 }
 // need to create modal layout with innerhtml which the coinData method will pass through to display the right info. 
 
-document.addEventListener('click', function handleClickOutsideBox(event) {
-    const box = document.querySelector('.close');
-    if (box.contains(event.target)) {
-        modal.style.display = "none";
-        bgBlur.style.visibility = "";
-    }
-});
 // For the Carousel (June 19)
 
 cryptoApp.carousel = () => {

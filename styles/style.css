@@ -576,6 +576,10 @@ template {
     color: white;
   }
 }
+.carousel {
+  position: relative;
+}
+
 .carouselContainer {
   width: 250px;
   margin: auto;
@@ -590,7 +594,6 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
 }
 
 .carouselButton {
@@ -601,15 +604,15 @@ li {
 .left {
   position: absolute;
   z-index: 10;
-  right: 60%;
-  top: 113%;
+  left: 35%;
+  top: 30%;
 }
 
 .right {
   position: absolute;
   z-index: 10;
-  left: 60%;
-  top: 113%;
+  right: 35%;
+  top: 30%;
 }
 
 .fa-arrow-left-long,
