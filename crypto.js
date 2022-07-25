@@ -6,9 +6,6 @@ const bgBlur = document.getElementById("blur");
 
 cryptoApp.init = () => {
     cryptoApp.marketData();
-
-
-
 }
 
 
@@ -16,12 +13,50 @@ cryptoApp.marketData = () => {
     const marketUrl = new URL(cryptoApp.url);
     fetch(marketUrl)
         .then(response => {
-            return response.json();
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error(res.statusText);
+            }
         })
         .then(result => {
             cryptoApp.topList(result);
             cryptoApp.coinData(result);
+            cryptoApp.search(result);
+
         })
+        .catch((err) => {
+            if (err.message === "Not Found") {
+                alert("The call was not successful. Did you mess with the Js?!")
+            } else {
+                alert("looks like we ran into some technical difficulties!")
+            }
+
+        })
+}
+
+// search method
+cryptoApp.search = (result) => {
+    const coinForm = document.querySelector('form');
+
+    coinForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const coinInput = document.querySelector('input');
+        const userCoin = (coinInput.value);
+        const modal = document.getElementById("modal");
+        const coinSearch = result.filter(item => item.id.includes(userCoin) || item.symbol.includes(userCoin));
+        const searchResult = coinSearch[0];
+
+        if (searchResult !== undefined) {
+            console.log(searchResult);
+            modal.style.display = "";
+            cryptoApp.displayCoinData(searchResult);
+
+        } else {
+            alert("please enter a proper coin");
+        }
+
+    })
 }
 
 // Identifies top 10 coins on the market WITH .FILTER ADVANCED ARRAY METHODS.
@@ -47,17 +82,15 @@ cryptoApp.coinData = (coins) => {
     buttons.forEach(function (coin) {
         coin.addEventListener('click', function (event) {
             const selectedCurrency = this.className;
+            // bgBlur.style.visibility = "hidden";
 
-            bgBlur.style.visibility = "hidden";
 
             const modal = document.getElementById("modal");
             modal.style.display = "";
-            console.log(selectedCurrency)
             const coinArray = coins.filter((crypto) => {
                 return (crypto.id == selectedCurrency);
             })
             const coinObject = coinArray[0]
-            console.log(coinObject)
             cryptoApp.displayCoinData(coinObject);
         })
     })
@@ -73,6 +106,7 @@ cryptoApp.displayCoinData = (coinObject) => {
     modalClose.classList.add('close');
 
     modalClose.innerHTML = "<i class='fa-solid fa-rectangle-xmark fa-3x'></i>"
+    bgBlur.style.visibility = "hidden";
 
     modalBox.innerHTML =
         `<h2> ${coinObject.name} - ${coinObject.symbol} </h2>
@@ -92,21 +126,6 @@ cryptoApp.displayCoinData = (coinObject) => {
     `
     modalBox.append(modalClose);
 }
-// need to create modal layout with innerhtml which the coinData method will pass through to display the right info. 
-
-// cryptoApp.events = () => {
-//     document.querySelector('#close').addEventListener('click', function (){
-//         const userSelection = this.value;
-//         artApp.getArt(userSelection);
-//     })
-// }
-
-// cryptoApp.boxClose = () => {
-//     document.getElementsByClassName('close').onclick = function (){
-
-//     }
-// }
-
 
 document.addEventListener('click', function handleClickOutsideBox(event) {
     const box = document.querySelector('.close');

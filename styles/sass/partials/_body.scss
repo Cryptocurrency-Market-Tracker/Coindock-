@@ -28,7 +28,7 @@ body {
     }
 
     p {
-      @include fontStyles (400, 20px, 0, white);
+      @include fontStyles (400, 1.25rem, 0, white);
       width: 65%;
       line-height: 1.8rem;
     }
@@ -60,6 +60,12 @@ body {
     // margin-top: 65px;
     height: 1000px;
   }
+
+  .phoneApp {
+    p {
+      display: none;
+    }
+  }
 }
 
 .iconButtons {
@@ -85,4 +91,8 @@ button {
   height: 90px;
   border: transparent;
   background-color: transparent;
+}
+
+label {
+  @include fontStyles (400, 20px, 0, $blue);
 }

@@ -41,7 +41,7 @@ body {
   color: #F2911B;
 }
 .mainContainer .mainContent p {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
@@ -71,6 +71,9 @@ body {
 }
 .mainContainer .phoneApp img {
   height: 1000px;
+}
+.mainContainer .phoneApp p {
+  display: none;
 }
 
 .iconButtons {
@@ -102,6 +105,14 @@ button {
   height: 90px;
   border: transparent;
   background-color: transparent;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-family: "Poppins", sans-serif;
+  color: #4973F2;
 }
 
 .navBar {
@@ -143,6 +154,9 @@ button {
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
   color: #4973F2;
+}
+.navBar .menuBar {
+  display: none;
 }
 
 html {
@@ -483,5 +497,81 @@ template {
   }
   100% {
     opacity: 0;
+  }
+}
+@media (max-width: 811px) {
+  .mainContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 50px;
+  }
+  .mainContainer .mainContent h2 {
+    font-size: 4rem;
+  }
+  .mainContainer .phoneApp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mainContainer .phoneApp p {
+    display: block;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    position: relative;
+    left: 100px;
+    text-align: center;
+  }
+  .mainContainer .phoneApp img {
+    width: 521%;
+    height: 700px;
+  }
+  .navBar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  .modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .modal .marketVisualData {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .modal .marketCoinData p {
+    line-height: 5px;
+    font-size: 15px;
+    color: white;
   }
 }
