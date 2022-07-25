@@ -1,6 +1,6 @@
 const cryptoApp = {};
 cryptoApp.url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-const bgBlur = document.getElementById("blur");
+const bgBlur = document.querySelector(".blur");
 
 
 
@@ -152,7 +152,7 @@ cryptoApp.displayCoinData = (coinObject) => {
 }
 // need to create modal layout with innerhtml which the coinData method will pass through to display the right info. 
 
-// For the Carousel (June 19)
+// for creating the carousel
 
 cryptoApp.carousel = () => {
     const carouselSlide = document.querySelector('.carouselSlide');
