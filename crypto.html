@@ -8,35 +8,85 @@
   <title>TOP LIST</title>
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="https://cdn.cryptofonts.com/1.4.0/cryptofont.css">
-  <script src="https://kit.fontawesome.com/d877b183e7.js" crossorigin="anonymous"></script>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/334409e065.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <ul class="iconButtons">
-        
-  </ul>
+  <header>
+    <nav>
+      <div class="wrapper navBar">
+        <ul>
+          <li><a href="./crypto.html">Homepage</a></li>
+          <li><a href="https://coinmarketcap.com/">Market</a></li>
+        </ul>
 
-  <section class="carousel">
-    
-    <div class="carouselContainer">
-      <div class="carouselSlide">
+        <h1>COINDOCK <i class="fa-solid fa-anchor"></i></h1>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="./team.html">About Us</a></li>
+        </ul>
+        <div class="menuBar">
+          <i class="fa-solid fa-bars fa-2xl"></i>
+        </div>
       </div>
-    </div>
-    <button class="carouselButton left" id="left"><i class="fa-solid fa-arrow-left-long"></i></button>
-    <button class="carouselButton right" id="right"><i class="fa-solid fa-arrow-right-long"></i></button>
-    <div class="coinName">
-      <p>bitcoin</p>
-    </div>
-  </section>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <form action="">
+        <label for="coinSearch" class="searchBar">Interested in a specific coin?!</label>
+        <input type="text" id="coinSearch" placeholder="Search for a coin!">
+      </form>
+    </section>
+    <section>
+      <div class="wrapper mainContainer" id="blur">
+        <div class="mainContent">
+          <h2>Dive into <span>cryptocurrency!</span></h2>
+          <p><span class="company">Coindock</span> is the #1 market data tracker. It is the <span>easiest and most
+              efficient</span> way to trade and
+            manage cryptocurrency. With extensive market data for experts and beginners alike, buy and
+            sell popular
+            digital currency such as Bitcoin and Ethereum all in one place! Get started today!</p>
+          <a href="#iconsSection">TRY HERE</a>
+        </div>
+        <div class="phoneApp">
+          <p>Revolutionary and simple-to-use mobile app available on both Google Play and App Store!</p>
+          <img src="./assets/phone2.png" alt="iPhone displaying cryptocurrency app with buy sell functionality">
+        </div>
+      </div>
+    </section>
 
 
-  <div id="myDiv" style="display:none;"  class="myDiv"></div>
-  </div>
+    <dialog id="modal" style="display:none;" class="wrapper modal"></dialog>
+    <ul class="iconButtons" id="iconsSection"></ul>
 
-  <script src="crypto.js"></script>
+    <section class="carousel">
+      <div class="carouselContainer">
+        <div class="carouselSlide">
+        </div>
+      </div>
+      <button class="carouselButton left" id="left"><i class="fa-solid fa-arrow-left-long"></i></button>
+      <button class="carouselButton right" id="right"><i class="fa-solid fa-arrow-right-long"></i></button>
+      <div class="coinName">
+        <p>bitcoin</p>
+      </div>
+    </section>
+
+
+
+
+
+    <script src="crypto.js"></script>
 
 </body>
 
+<footer>
+  <div class="wrapper">
+    <p>Created by Kevin and Larry at Juno College</p>
+  </div>
+</footer>
 
 </html>

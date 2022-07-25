@@ -3,57 +3,56 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 5%;
+
     .person {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        img {
+
+            width: 80%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+
         p {
-            font-size: 20px;
-            font-weight: 400;
-            letter-spacing: 0;
-            font-family: "Poppins", sans-serif;
-            color: white;
+            @include fontStyles (400, 2rem, 0, white);
             line-height: 1.8rem;
         }
     }
-        img {
-            height: 60%;
-            width: 50%;
-            border-radius: 70%;
-            object-fit: cover;
-        }
-        .smLinks {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            .fa-linkedin,
-            .fa-github {
-                padding: 20px;
-                font-size: 3rem;
-                color: white;
-                &:hover {
-                    color: orange;
-                }
+
+
+
+    .smLinks {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .fa-linkedin,
+        .fa-github {
+            padding: 20px;
+            font-size: 3rem;
+            color: white;
+
+            &:hover {
+                color: orange;
             }
         }
     }
+}
 
 .aboutUs {
     text-align: center;
+
     h2 {
-        font-size: 6rem;
-        font-weight: 700;
-        letter-spacing: 0;
-        font-family: "Poppins", sans-serif;
-        color: white;
+        @include fontStyles (700, 6rem, 0, white);
         margin-bottom: 30px;
     }
+
     p {
-        font-size: 20px;
-        font-weight: 400;
-        letter-spacing: 0;
-        font-family: "Poppins", sans-serif;
-        color: white;
+        @include fontStyles (400, 20px, 0, white);
         line-height: 1.8rem;
     }
 }

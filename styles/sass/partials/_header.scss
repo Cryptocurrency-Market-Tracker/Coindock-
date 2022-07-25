@@ -1,0 +1,43 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+
+
+  ul {
+    display: flex;
+
+
+  }
+
+
+  li {
+    padding: 0 20px;
+    list-style: none;
+    @include fontStyles (400, 20px, 0, white);
+
+
+  }
+
+  a {
+    text-decoration: none;
+    color: $blue;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  h1 {
+    @include fontStyles(700, 48px, 0, $blue);
+    // border: 2px solid white;
+    // background-color: white;
+    // border-radius: 20px;
+    // padding: 10px;
+  }
+
+  .menuBar {
+    display: none;
+  }
+}

@@ -1,0 +1,70 @@
+@media (max-width: 811px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    .mainContent {
+      h2 {
+        font-size: 4rem;
+      }
+    }
+
+    .phoneApp {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        display: block;
+        @include fontStyles (400, 30px, 0, white);
+        position: relative;
+        left: 100px;
+        text-align: center;
+      }
+
+      img {
+        width: 521%;
+        height: 700px;
+      }
+    }
+  }
+
+
+  .navBar {
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+  }
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+
+    .marketVisualData {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .marketCoinData {
+      p {
+        line-height: 5px;
+        font-size: 15px;
+        color: white;
+      }
+    }
+  }
+}
+
+// menu bar
+// .menuBar {
+//     display:block;
+//     color:red;
+//     cursor: pointer;
+// }

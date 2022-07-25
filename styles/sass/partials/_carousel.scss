@@ -1,10 +1,8 @@
-main {
-    background-color: orange;
-}
 .carouselContainer {
     width: 250px;
     margin: auto;
     overflow: hidden;
+
 }
 
 li {
@@ -21,22 +19,22 @@ li {
     background-color: orange;
 }
 
-#left {
+.left {
     position: absolute;
-    z-index: 10; 
-    right: 68%;
-    top: 18%;
+    z-index: 10;
+    right: 60%;
+    top: 113%;
 }
 
-#right {
+.right {
     position: absolute;
-    z-index: 10; 
-    left: 68%;
-    top: 18%;
-   
+    z-index: 10;
+    left: 60%;
+    top: 113%;
+
 }
 
-.fa-arrow-left-long ,
+.fa-arrow-left-long,
 .fa-arrow-right-long {
     color: lightblue;
 }
@@ -44,4 +42,8 @@ li {
 .coinName {
     margin: 0 auto;
     text-align: center;
+
+    p {
+        @include fontStyles (400, 2rem, 0, white);
+    }
 }
