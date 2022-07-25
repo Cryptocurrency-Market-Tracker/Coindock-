@@ -42,7 +42,7 @@ cryptoApp.search = (result) => {
     coinForm.addEventListener('submit', function (event) {
         event.preventDefault();
         const coinInput = document.querySelector('input');
-        const userCoin = (coinInput.value);
+        const userCoin = (coinInput.value).toLocaleLowerCase();
         const modal = document.getElementById("modal");
         const coinSearch = result.filter(item => item.id.includes(userCoin) || item.symbol.includes(userCoin));
         const searchResult = coinSearch[0];
