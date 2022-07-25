@@ -38,14 +38,16 @@
   <main>
     <section>
       <!-- User search functionality -->
-      <form action="">
-        <label for="coinSearch" class="searchBar">Interested in a specific coin?!</label>
-        <input type="text" id="coinSearch" placeholder="Search for a coin!">
-      </form>
+      <div class="wrapper">
+        <form action="">
+          <label for="coinSearch" class="searchBar">Interested in a specific coin?!</label>
+          <input type="text" id="coinSearch" placeholder="Search for a coin!">
+        </form>
+      </div>
     </section>
     <section>
       <!--  -->
-      <div class="wrapper mainContainer" id="blur">
+      <div class="wrapper mainContainer blur">
         <div class="mainContent">
           <h2>Dive into <span>cryptocurrency!</span></h2>
           <p><span class="company">Coindock</span> is the #1 market data tracker. It is the <span>easiest and most
@@ -69,9 +71,11 @@
       <div class="carouselContainer">
         <div class="carouselSlide">
         </div>
+        <button class="carouselButton left" id="left"><i class="fa-solid fa-arrow-left-long"></i></button>
+        <button class="carouselButton right" id="right"><i class="fa-solid fa-arrow-right-long"></i></button>
       </div>
-      <button class="carouselButton left" id="left"><i class="fa-solid fa-arrow-left-long"></i></button>
-      <button class="carouselButton right" id="right"><i class="fa-solid fa-arrow-right-long"></i></button>
+      <!-- <button class="carouselButton left" id="left"><i class="fa-solid fa-arrow-left-long"></i></button>
+      <button class="carouselButton right" id="right"><i class="fa-solid fa-arrow-right-long"></i></button> -->
       <div class="coinName">
         <p>bitcoin</p>
       </div>
