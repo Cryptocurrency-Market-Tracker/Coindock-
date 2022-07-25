@@ -19,7 +19,7 @@
 
       p {
         display: block;
-        @include fontStyles (400, 30px, 0, white);
+        @include fontStyles (400, 1.875rem, 0, white);
         position: relative;
         left: 100px;
         text-align: center;
@@ -48,23 +48,31 @@
     flex-direction: column;
 
     .marketVisualData {
-      width: 80%;
-      margin: 0 auto;
+      img{
+        width: 100%;
+      }
     }
 
     .marketCoinData {
       p {
         line-height: 5px;
-        font-size: 15px;
+        font-size: 1rem ;
         color: white;
       }
     }
   }
+
+  .carousel {
+    .left {
+      left: 25%;
+      top: 30%;
+    }
+
+    .right {
+      right: 25%;
+      top: 30%;
+  }
+  
+  }
 }
 
-// menu bar
-// .menuBar {
-//     display:block;
-//     color:red;
-//     cursor: pointer;
-// }

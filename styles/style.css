@@ -54,9 +54,10 @@ body {
   text-transform: uppercase;
   font-weight: 700;
 }
-.mainContainer .mainContent a {
+.mainContainer .mainContent .searchBar,
+.mainContainer .mainContent input {
   text-decoration: none;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
@@ -66,39 +67,16 @@ body {
   text-align: center;
   background-color: white;
 }
-.mainContainer .mainContent a:hover {
-  color: #F2911B;
+.mainContainer .mainContent input {
+  margin-top: 20px;
+  border: none;
+  width: 300px;
 }
 .mainContainer .phoneApp img {
   height: 1000px;
 }
 .mainContainer .phoneApp p {
   display: none;
-}
-
-.iconButtons {
-  margin-top: 200px;
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0;
-}
-
-.iconButtons li,
-.iconButtons p {
-  text-align: center;
-}
-
-.iconButtons img {
-  width: 50%;
-  cursor: pointer;
 }
 
 button {
@@ -108,7 +86,7 @@ button {
 }
 
 label {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
@@ -135,7 +113,7 @@ label {
 .navBar li {
   padding: 0 20px;
   list-style: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
@@ -149,7 +127,7 @@ label {
   color: #F2911B;
 }
 .navBar h1 {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
@@ -446,14 +424,14 @@ template {
   z-index: 20;
 }
 .modal h2 {
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: 700;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
   color: #F2911B;
 }
 .modal p {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
@@ -467,39 +445,6 @@ template {
   cursor: pointer;
 }
 
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 @media (max-width: 811px) {
   .mainContainer {
     display: -webkit-box;
@@ -533,7 +478,7 @@ template {
   }
   .mainContainer .phoneApp p {
     display: block;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 400;
     letter-spacing: 0;
     font-family: "Poppins", sans-serif;
@@ -566,14 +511,21 @@ template {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .modal .marketVisualData {
-    width: 80%;
-    margin: 0 auto;
+  .modal .marketVisualData img {
+    width: 100%;
   }
   .modal .marketCoinData p {
     line-height: 5px;
-    font-size: 15px;
+    font-size: 1rem;
     color: white;
+  }
+  .carousel .left {
+    left: 25%;
+    top: 30%;
+  }
+  .carousel .right {
+    right: 25%;
+    top: 30%;
   }
 }
 .carousel {
@@ -703,7 +655,7 @@ li {
   margin-bottom: 30px;
 }
 .aboutUs p {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;

@@ -32,12 +32,12 @@
   z-index: 20;
 
   h2 {
-    @include fontStyles (700, 60px, 0, $orange);
+    @include fontStyles (700, 3.75rem, 0, $orange);
 
   }
 
   p {
-    @include fontStyles (400, 20px, 0, $blue);
+    @include fontStyles (400, 1.25rem, 0, $blue);
 
   }
 
@@ -48,25 +48,5 @@
 
   .close:hover {
     cursor: pointer;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
   }
 }
