@@ -17,10 +17,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     h2 {
       @include fontStyles (700, 6rem, 0, white);
-      margin-bottom: 30px;
+      margin-bottom: 30px;    
+      font-size:clamp(3rem, 800px, 2.6rem);  
     }
 
     span {
@@ -58,7 +58,7 @@ body {
   }
 
   .phoneApp img {
-    height: 1000px;
+    height: 800px;
   }
 
   .phoneApp {

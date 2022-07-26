@@ -1,3 +1,60 @@
+@media (max-width: 1600px) {
+  .modal {
+    display: flex;
+    flex-direction: column; 
+
+    h2{
+      font-size:2rem;
+    }
+
+    .marketVisualData {
+      margin:0 auto;
+      width:60%;
+
+      img{
+        width: 100%;
+      }
+    }
+    .marketCoinData {
+      p {
+        line-height: 5px;
+        font-size: 1rem ;
+        color: white;
+      }
+    }
+  }
+
+}
+// For some reason at 1600px breakpoint. the flex-direction changes to column. At this point - the img somehow enlarges again and shrinks at 1222px. therefore to prevent the image from becoming too small, we inserted a breakpoint to "rescale the image."
+@media (max-width: 1222px) {
+  .modal {
+    display: flex;
+    flex-direction: column; 
+
+    h2{
+      font-size:2rem;
+    }
+
+    .marketVisualData {
+      margin:0 auto;
+      width:85%;
+
+      img{
+        width: 100%;
+      }
+    }
+    .marketCoinData {
+      p {
+        line-height: 5px;
+        font-size: 1rem ;
+        color: white;
+      }
+    }
+  }
+
+}
+
+
 @media (max-width: 811px) {
   .mainContainer {
     display: flex;
@@ -8,7 +65,7 @@
 
     .mainContent {
       h2 {
-        font-size: 4rem;
+        font-size:clamp(3rem, 800px, 2.6rem);  
       }
     }
 
@@ -20,13 +77,15 @@
       p {
         display: block;
         @include fontStyles (400, 1.875rem, 0, white);
-        position: relative;
+        position: absolute;
+        width: 30%;
         left: 100px;
         text-align: center;
       }
 
       img {
-        width: 521%;
+        position:relative;
+        left: 25vw;
         height: 700px;
       }
     }
@@ -64,15 +123,23 @@
 
   .carousel {
     .left {
-      left: 25%;
+      left: 5%;
       top: 30%;
     }
 
     .right {
-      right: 25%;
+      right: 5%;
       top: 30%;
   }
   
   }
 }
-
+@media (max-width: 810px) {
+  .mainContainer {
+    .mainContent {
+      p {
+        width:100%;
+      }
+    }
+  }
+}
