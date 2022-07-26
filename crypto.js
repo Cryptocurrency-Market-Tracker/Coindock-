@@ -1,14 +1,16 @@
+
+// namespace-object creation
 const cryptoApp = {};
+// api url
 cryptoApp.url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-const bgBlur = document.querySelector(".blur");
+const bgBlur = document.querySelectorAll(".blur");
 
-
-
+// init function
 cryptoApp.init = () => {
     cryptoApp.marketData();
 }
 
-
+// fetch api url data
 cryptoApp.marketData = () => {
     const marketUrl = new URL(cryptoApp.url);
     fetch(marketUrl)
@@ -25,6 +27,7 @@ cryptoApp.marketData = () => {
             cryptoApp.search(result);
 
         })
+        // error handling
         .catch((err) => {
             if (err.message === "Not Found") {
                 alert("The call was not successful. Did you mess with the Js?!")
@@ -35,7 +38,7 @@ cryptoApp.marketData = () => {
         })
 }
 
-// search method
+// search method - top 100 coins
 cryptoApp.search = (result) => {
     const coinForm = document.querySelector('form');
 
@@ -44,11 +47,11 @@ cryptoApp.search = (result) => {
         const coinInput = document.querySelector('input');
         const userCoin = (coinInput.value).toLocaleLowerCase();
         const modal = document.getElementById("modal");
+        // filter by user input
         const coinSearch = result.filter(item => item.id.includes(userCoin) || item.symbol.includes(userCoin));
         const searchResult = coinSearch[0];
-
+        // compare results and returns a value 
         if (searchResult !== undefined) {
-            console.log(searchResult);
             modal.style.display = "";
             cryptoApp.displayCoinData(searchResult);
 
@@ -105,8 +108,7 @@ cryptoApp.coinData = (coins) => {
             const coinArray = coins.filter((crypto) => {
                 return (crypto.id == selectedCurrency);
             })
-            const coinObject = coinArray[0]
-            console.log(coinObject);
+            const coinObject = coinArray[0];
             cryptoApp.displayCoinData(coinObject);
         })
     })
@@ -114,7 +116,7 @@ cryptoApp.coinData = (coins) => {
 
 // Display coin data on modal(which we will create)
 cryptoApp.displayCoinData = (coinObject) => {
-    // console.log(`The current Price of ${coinObject.name} is $${(coinObject.current_price).toFixed(3)}`)
+    
     const modalBox = document.querySelector('.modal')
     modalBox.innerHTML = "";
 
@@ -123,11 +125,14 @@ cryptoApp.displayCoinData = (coinObject) => {
     modalClose.classList.add('close');
 
     modalClose.innerHTML = "<i class='fa-solid fa-rectangle-xmark fa-3x'></i>"
-    bgBlur.style.visibility = "hidden";
+    bgBlur.forEach(function (event) {
+        event.style.visibility = "hidden";
+    })
 
     modalBox.innerHTML =
-        `<h2> ${coinObject.name} - ${coinObject.symbol} </h2>
-        
+        `<div class= modalCoinName>
+        <h2> ${coinObject.name} - ${coinObject.symbol} </h2>
+        </div>
         <div class = marketVisualData>
         <img src = "./assets/${coinObject.symbol}.png" alt ="${coinObject.name}">
         </div>
@@ -146,13 +151,15 @@ cryptoApp.displayCoinData = (coinObject) => {
         const box = document.querySelector('.close');
         if (box.contains(event.target)) {
             modal.style.display = "none";
-            bgBlur.style.visibility = "";
+            bgBlur.forEach(function (event) {
+                event.style.visibility = "";
+            })
         }
     });
 }
-// need to create modal layout with innerhtml which the coinData method will pass through to display the right info. 
 
-// for creating the carousel
+// For the Carousel 
+
 
 cryptoApp.carousel = () => {
     const carouselSlide = document.querySelector('.carouselSlide');

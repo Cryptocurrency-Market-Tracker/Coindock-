@@ -1,4 +1,61 @@
-@media (max-width: 811px) {
+@media (max-width: 1600px) {
+  .modal {
+    display: flex;
+    flex-direction: column; 
+
+    h2{
+      font-size:2rem;
+    }
+
+    .marketVisualData {
+      margin:0 auto;
+      width:60%;
+
+      img{
+        width: 100%;
+      }
+    }
+    .marketCoinData {
+      p {
+        line-height: 5px;
+        font-size: 1rem ;
+        color: white;
+      }
+    }
+  }
+
+}
+// For some reason at 1600px breakpoint. the flex-direction changes to column. At this point - the img somehow enlarges again and shrinks at 1222px. therefore to prevent the image from becoming too small, we inserted a breakpoint to "rescale the image."
+@media (max-width: 1222px) {
+  .modal {
+    display: flex;
+    flex-direction: column; 
+
+    h2{
+      font-size:2rem;
+    }
+
+    .marketVisualData {
+      margin:0 auto;
+      width:85%;
+
+      img{
+        width: 100%;
+      }
+    }
+    .marketCoinData {
+      p {
+        line-height: 5px;
+        font-size: 1rem ;
+        color: white;
+      }
+    }
+  }
+
+}
+
+
+@media (max-width: 860px) {
   .mainContainer {
     display: flex;
     flex-direction: column;
@@ -8,7 +65,7 @@
 
     .mainContent {
       h2 {
-        font-size: 4rem;
+        font-size:clamp(3rem, 800px, 2.6rem);  
       }
     }
 
@@ -19,14 +76,16 @@
 
       p {
         display: block;
-        @include fontStyles (400, 30px, 0, white);
-        position: relative;
+        @include fontStyles (400, 1.875rem, 0, white);
+        position: absolute;
+        width: 30%;
         left: 100px;
         text-align: center;
       }
 
       img {
-        width: 521%;
+        position:relative;
+        left: 25vw;
         height: 700px;
       }
     }
@@ -53,26 +112,21 @@
     flex-direction: column;
 
     .marketVisualData {
-      width: 80%;
-      margin: 0 auto;
+      img{
+        width: 100%;
+      }
     }
 
     .marketCoinData {
       p {
         line-height: 5px;
-        font-size: 15px;
+        font-size: 1rem ;
         color: white;
       }
     }
   }
 }
 
-// menu bar
-// .menuBar {
-//     display:block;
-//     color:red;
-//     cursor: pointer;
-// }
 
 // For About US Page
 

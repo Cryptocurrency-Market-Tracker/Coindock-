@@ -53,7 +53,7 @@
     }
 
     p {
-        @include fontStyles (400, 20px, 0, white);
+        @include fontStyles (400, 1.25rem, 0, white);
         line-height: 1.8rem;
     }
 }

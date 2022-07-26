@@ -21,10 +21,10 @@
       <div class="wrapper navBar">
         <ul>
           <li><a href="./crypto.html">Homepage</a></li>
-          <li><a href="https://coinmarketcap.com/">Market</a></li>
+          <li><a href="https://www.coingecko.com/">Market</a></li>
         </ul>
 
-        <h1>COINDOCK <i class="fa-solid fa-anchor"></i></h1>
+        <h1>COINDOCK</h1>
         <ul>
           <li><a href="#">Features</a></li>
           <li><a href="./team.html">About Us</a></li>
@@ -37,15 +37,6 @@
   </header>
   <main>
     <section>
-      <!-- User search functionality -->
-      <div class="wrapper">
-        <form action="">
-          <label for="coinSearch" class="searchBar">Interested in a specific coin?!</label>
-          <input type="text" id="coinSearch" placeholder="Search for a coin!">
-        </form>
-      </div>
-    </section>
-    <section>
       <!--  -->
       <div class="wrapper mainContainer blur">
         <div class="mainContent">
@@ -55,27 +46,33 @@
             manage cryptocurrency. With extensive market data for experts and beginners alike, buy and
             sell popular
             digital currency such as Bitcoin and Ethereum all in one place! Get started today!</p>
-          <a href="#iconsSection">TRY HERE</a>
+          <!-- <a href="#carousel">TRY HERE</a> -->
+            <!-- User search functionality -->
+          <form action="">
+            <label for="coinSearch" class="searchBar"> Search for a coin in the top 100.</label>
+            <input type="text" id="coinSearch" placeholder="Search Here!"  >
+          </form>
+
         </div>
         <div class="phoneApp">
           <p>Revolutionary and simple-to-use mobile app available on both Google Play and App Store!</p>
-          <img src="./assets/phone2.png" alt="iPhone displaying cryptocurrency app with buy sell functionality">
+          <img src="./assets/phone.png" alt="iPhone displaying cryptocurrency app with buy sell functionality">
         </div>
       </div>
     </section>
-
-
+    <!-- modal creation -->
     <dialog id="modal" style="display:none;" class="wrapper modal"></dialog>
 
-    <section class="carousel">
-      <div class="carouselContainer">
-        <div class="carouselSlide">
+<!-- Carousel section -->
+    <section id = "carousel" class="carousel blur">
+      <div class="carouselContainerRide">
+        <div class="carouselContainer">
+          <div class="carouselSlide">
+          </div>
         </div>
         <button class="carouselButton left" id="left"><i class="fa-solid fa-arrow-left-long"></i></button>
         <button class="carouselButton right" id="right"><i class="fa-solid fa-arrow-right-long"></i></button>
       </div>
-      <!-- <button class="carouselButton left" id="left"><i class="fa-solid fa-arrow-left-long"></i></button>
-      <button class="carouselButton right" id="right"><i class="fa-solid fa-arrow-right-long"></i></button> -->
       <div class="coinName">
         <p>bitcoin</p>
       </div>
