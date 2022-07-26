@@ -3,7 +3,7 @@
 const cryptoApp = {};
 // api url
 cryptoApp.url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-const bgBlur = document.querySelector(".blur");
+const bgBlur = document.querySelectorAll(".blur");
 
 // init function
 cryptoApp.init = () => {
@@ -125,7 +125,9 @@ cryptoApp.displayCoinData = (coinObject) => {
     modalClose.classList.add('close');
 
     modalClose.innerHTML = "<i class='fa-solid fa-rectangle-xmark fa-3x'></i>"
-    bgBlur.style.visibility = "hidden";
+    bgBlur.forEach(function (event) {
+        event.style.visibility = "hidden";
+    })
 
     modalBox.innerHTML =
         `<div class= modalCoinName>
