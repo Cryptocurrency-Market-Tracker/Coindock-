@@ -139,6 +139,11 @@
       font-size: 14px;
     }
   }
+  .mainContainer{
+    .mainContent p {
+      width:100%;
+    }
+  }
 }
 
 @media (max-width: 600px) {
@@ -148,6 +153,15 @@
     }
     p {
       @include fontStyles (400, 16px, 0, white);
+    }
+  }
+  .mainContainer {
+    .phoneApp {
+      p {
+        width: 30%;
+        left: 10px;
+        font-size: 1.25rem;
+      }
     }
   }
 }
