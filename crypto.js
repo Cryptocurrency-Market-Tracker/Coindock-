@@ -134,7 +134,7 @@ cryptoApp.displayCoinData = (coinObject) => {
         <h2> ${coinObject.name} - ${coinObject.symbol} </h2>
         </div>
         <div class = marketVisualData>
-        <img src = "./assets/${coinObject.symbol}.png" alt ="${coinObject.name}">
+        <img src = "./assets/${coinObject.symbol}.png" alt ="${coinObject.name} Graph Unavailable. Will be added in a future update!">
         </div>
         <div class = "marketCoinData">
         <p> Coin ranking: ${coinObject.market_cap_rank} </p>
@@ -192,7 +192,9 @@ cryptoApp.carousel = () => {
         carouselSlide.style.transition = "transform 0.2s ease-in-out";
         counter--;
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        cryptoApp.coinName = document.querySelector('.coinName');
         cryptoApp.coinName.innerHTML = "";
+        cryptoApp.coinText = document.createElement('p');
         cryptoApp.coinText.textContent = `${carouselImages[counter].id}`;
         cryptoApp.coinName.appendChild(cryptoApp.coinText)
     })
