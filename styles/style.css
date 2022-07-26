@@ -739,6 +739,9 @@ footer p {
   .navBar li {
     font-size: 14px;
   }
+  .mainContainer .mainContent p {
+    width: 100%;
+  }
 }
 @media (max-width: 600px) {
   .aboutUs h2 {
@@ -754,6 +757,11 @@ footer p {
     letter-spacing: 0;
     font-family: "Poppins", sans-serif;
     color: white;
+  }
+  .mainContainer .phoneApp p {
+    width: 30%;
+    left: 10px;
+    font-size: 1.25rem;
   }
 }
 @media (max-width: 500px) {

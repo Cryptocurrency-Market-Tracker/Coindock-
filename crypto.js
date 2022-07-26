@@ -160,18 +160,21 @@ cryptoApp.displayCoinData = (coinObject) => {
 
 // For the Carousel 
 
-
+// target all the relevant carousel items
 cryptoApp.carousel = () => {
     const carouselSlide = document.querySelector('.carouselSlide');
     const carouselImages = document.querySelectorAll('.carouselSlide img');
     const leftButton = document.querySelector('#left');
     const rightButton = document.querySelector('#right');
 
+
     let counter = 1;
     const size = carouselImages[0].clientWidth;
 
     carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
+// on right/left click movement + append name of coin
+   
     rightButton.addEventListener('click', () => {
         if (counter >= carouselImages.length - 1) return;
         carouselSlide.style.transition = "transform 0.2s ease-in-out";
