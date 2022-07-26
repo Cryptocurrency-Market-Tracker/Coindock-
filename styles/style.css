@@ -5,7 +5,7 @@ body {
   background-attachment: fixed;
 }
 
-#blur {
+.blur {
   visibility: "";
 }
 
@@ -110,6 +110,7 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0;
 }
 .navBar li {
   padding: 0 20px;
@@ -446,149 +447,9 @@ template {
   cursor: pointer;
 }
 
-@media (max-width: 1600px) {
-  .modal {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .modal h2 {
-    font-size: 2rem;
-  }
-  .modal .marketVisualData {
-    margin: 0 auto;
-    width: 60%;
-  }
-  .modal .marketVisualData img {
-    width: 100%;
-  }
-  .modal .marketCoinData p {
-    line-height: 5px;
-    font-size: 1rem;
-    color: white;
-  }
-}
-@media (max-width: 1222px) {
-  .modal {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .modal h2 {
-    font-size: 2rem;
-  }
-  .modal .marketVisualData {
-    margin: 0 auto;
-    width: 85%;
-  }
-  .modal .marketVisualData img {
-    width: 100%;
-  }
-  .modal .marketCoinData p {
-    line-height: 5px;
-    font-size: 1rem;
-    color: white;
-  }
-}
-@media (max-width: 811px) {
-  .mainContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-top: 50px;
-  }
-  .mainContainer .mainContent h2 {
-    font-size: clamp(3rem, 800px, 2.6rem);
-  }
-  .mainContainer .phoneApp {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .mainContainer .phoneApp p {
-    display: block;
-    font-size: 1.875rem;
-    font-weight: 400;
-    letter-spacing: 0;
-    font-family: "Poppins", sans-serif;
-    color: white;
-    position: absolute;
-    width: 30%;
-    left: 100px;
-    text-align: center;
-  }
-  .mainContainer .phoneApp img {
-    position: relative;
-    left: 25vw;
-    height: 700px;
-  }
-  .navBar ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-  .modal {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .modal .marketVisualData img {
-    width: 100%;
-  }
-  .modal .marketCoinData p {
-    line-height: 5px;
-    font-size: 1rem;
-    color: white;
-  }
-  .carousel .left {
-    left: 5%;
-    top: 30%;
-  }
-  .carousel .right {
-    right: 5%;
-    top: 30%;
-  }
-}
-@media (max-width: 810px) {
-  .mainContainer .mainContent p {
-    width: 100%;
-  }
-}
-.carousel {
+.carouselContainerRide {
+  margin: auto;
+  width: 250px;
   position: relative;
 }
 
@@ -616,20 +477,20 @@ li {
 .left {
   position: absolute;
   z-index: 10;
-  left: 30%;
-  top: 30%;
+  left: -40%;
+  top: 35%;
 }
 
 .right {
   position: absolute;
   z-index: 10;
-  right: 30%;
-  top: 30%;
+  right: -40%;
+  top: 35%;
 }
 
 .fa-arrow-left-long,
 .fa-arrow-right-long {
-  color: lightblue;
+  color: white;
 }
 
 .coinName {
@@ -712,7 +573,8 @@ li {
   letter-spacing: 0;
   font-family: "Poppins", sans-serif;
   color: white;
-  margin-bottom: 30px;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 .aboutUs p {
   font-size: 1.25rem;
@@ -733,4 +595,197 @@ footer p {
   margin: 0;
   padding-top: 1%;
   padding-bottom: 1%;
+}
+
+@media (max-width: 1600px) {
+  .modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .modal h2 {
+    font-size: 2rem;
+  }
+  .modal .marketVisualData {
+    margin: 0 auto;
+    width: 60%;
+  }
+  .modal .marketVisualData img {
+    width: 100%;
+  }
+  .modal .marketCoinData p {
+    line-height: 5px;
+    font-size: 1rem;
+    color: white;
+  }
+}
+@media (max-width: 1222px) {
+  .modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .modal h2 {
+    font-size: 2rem;
+  }
+  .modal .marketVisualData {
+    margin: 0 auto;
+    width: 85%;
+  }
+  .modal .marketVisualData img {
+    width: 100%;
+  }
+  .modal .marketCoinData p {
+    line-height: 5px;
+    font-size: 1rem;
+    color: white;
+  }
+}
+@media (max-width: 860px) {
+  .mainContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 50px;
+  }
+  .mainContainer .mainContent h2 {
+    font-size: clamp(3rem, 800px, 2.6rem);
+  }
+  .mainContainer .phoneApp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mainContainer .phoneApp p {
+    display: block;
+    font-size: 1.875rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    position: absolute;
+    width: 30%;
+    left: 100px;
+    text-align: center;
+  }
+  .mainContainer .phoneApp img {
+    position: relative;
+    left: 25vw;
+    height: 700px;
+  }
+  .navBar h1 {
+    font-size: 48px;
+  }
+  .navBar li {
+    font-size: 20px;
+  }
+  .navBar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  .modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .modal .marketVisualData img {
+    width: 100%;
+  }
+  .modal .marketCoinData p {
+    line-height: 5px;
+    font-size: 1rem;
+    color: white;
+  }
+}
+@media (max-width: 1030px) {
+  .navBar h1 {
+    font-size: 33px;
+  }
+  .navBar li {
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .aboutUs h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    font-family: "Poppins", sans-serif;
+    color: white;
+  }
+  .aboutUs p {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-family: "Poppins", sans-serif;
+    color: white;
+  }
+}
+@media (max-width: 500px) {
+  .teamInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .teamInfo .person p {
+    font-size: 1.5rem;
+  }
+  .navBar .fa-anchor {
+    display: none;
+  }
+  .navBar li {
+    padding: 0;
+    font-size: 11px;
+  }
+  .navBar h1 {
+    font-size: 28px;
+  }
+  .aboutUs h2 {
+    font-size: 3rem;
+  }
+  .aboutUs p {
+    font-size: 14px;
+  }
 }

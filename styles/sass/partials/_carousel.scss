@@ -1,4 +1,6 @@
-.carousel {
+.carouselContainerRide {
+    margin: auto;
+    width: 250px;
     position: relative;
 }
 
@@ -25,20 +27,21 @@ li {
 .left {
     position: absolute;
     z-index: 10;
-    left: 30%;
-    top: 30%;
+    left: -40%;
+    top: 35%;
 }
 
 .right {
     position: absolute;
     z-index: 10;
-    right: 30%;
-    top: 30%;
+    right: -40%;
+    top: 35%;
+
 }
 
 .fa-arrow-left-long,
 .fa-arrow-right-long {
-    color: lightblue;
+    color: white;
 }
 
 .coinName {

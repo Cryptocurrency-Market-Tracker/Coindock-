@@ -3,7 +3,7 @@
 const cryptoApp = {};
 // api url
 cryptoApp.url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-const bgBlur = document.getElementById("blur");
+const bgBlur = document.querySelector(".blur");
 
 // init function
 cryptoApp.init = () => {
@@ -108,8 +108,7 @@ cryptoApp.coinData = (coins) => {
             const coinArray = coins.filter((crypto) => {
                 return (crypto.id == selectedCurrency);
             })
-            const coinObject = coinArray[0]
-            console.log(coinObject);
+            const coinObject = coinArray[0];
             cryptoApp.displayCoinData(coinObject);
         })
     })
@@ -155,8 +154,8 @@ cryptoApp.displayCoinData = (coinObject) => {
     });
 }
 
-
 // For the Carousel 
+
 
 cryptoApp.carousel = () => {
     const carouselSlide = document.querySelector('.carouselSlide');
