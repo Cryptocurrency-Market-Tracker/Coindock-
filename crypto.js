@@ -129,8 +129,9 @@ cryptoApp.displayCoinData = (coinObject) => {
     bgBlur.style.visibility = "hidden";
 
     modalBox.innerHTML =
-        `<h2> ${coinObject.name} - ${coinObject.symbol} </h2>
-        
+        `<div class= modalCoinName>
+        <h2> ${coinObject.name} - ${coinObject.symbol} </h2>
+        </div>
         <div class = marketVisualData>
         <img src = "./assets/${coinObject.symbol}.png" alt ="${coinObject.name}">
         </div>
