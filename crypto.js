@@ -188,6 +188,9 @@ cryptoApp.carousel = () => {
     })
 
     leftButton.addEventListener('click', () => {
+
+        // 2022-07-25 upon uploading our website to Netlify. We noticed that the starting carousel image is dogecoin instead of bitcoin. This issue is resolved with a refresh of the browser. As for why this is occuring we are not 100% sure except it might be due to an loading issue. After multiple attempts at fixing the solution(refer to commmits), this may be a problem that is beyond us FOR NOW. 
+
         if (counter <= 0) return;
         carouselSlide.style.transition = "transform 0.2s ease-in-out";
         counter--;
