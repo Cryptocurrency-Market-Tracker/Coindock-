@@ -151,7 +151,9 @@ cryptoApp.displayCoinData = (coinObject) => {
         const box = document.querySelector('.close');
         if (box.contains(event.target)) {
             modal.style.display = "none";
-            bgBlur.style.visibility = "";
+            bgBlur.forEach(function (event) {
+                event.style.visibility = "";
+            })
         }
     });
 }
